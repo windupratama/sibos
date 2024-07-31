@@ -5,7 +5,6 @@ class Film extends Controller
     public function index()
     {
         $data['title'] = 'Film Bioskop';
-        $data['nama'] = $this->model('user_model')->getUser();
         $data['film'] = $this->model('film_model')->getAllFilm();
         $this->view('templates/header', $data);
         $this->view('film/index', $data);
@@ -15,7 +14,6 @@ class Film extends Controller
     public function detail($id)
     {
         $data['title'] = 'Detail Film';
-        $data['nama'] = $this->model('user_model')->getUser();
         $data['film'] = $this->model('film_model')->getFilmbyId($id);
         $this->view('templates/header', $data);
         $this->view('film/detail', $data);
@@ -63,7 +61,6 @@ class Film extends Controller
     public function cari()
     {
         $data['title'] = 'Film Bioskop';
-        $data['nama'] = $this->model('user_model')->getUser();
         $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
         $data['film'] = $this->model('film_model')->cariFilm($keyword);
 

@@ -1,16 +1,5 @@
-<section class="container mt-5">
-    <div class="my-3">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/film">Film</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= BASEURL; ?>/bioskop">Bioskop</a>
-            </li>
-        </ul>
-    </div>
-    <hr>
-    <h4 class="fw-bold"> User : <?= $data['nama'] ?></h4>
+<section class="container">
+    <!-- <h4 class="fw-bold"> User : <?= $data['nama'] ?></h4> -->
     <div class="row my-3">
         <div class="card">
             <div class="my-2 alert-message">
@@ -28,11 +17,13 @@
                 </form>
             </div>
             <div class="card-body">
+                <?php if (isset($_SESSION['user'])): ?>
                 <div class="text-end">
                     <button type="button" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#tambahData">
                         Tambah Data
                     </button>
                 </div>
+                <?php endif; ?>
                 <div class="table-responsive table-sm p-2" style="max-height: 400px;">
                     <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead class="bg-light">
@@ -58,12 +49,14 @@
                                     <td><?= $film['tahun_rilis'] ?></td>
                                     <td><?= $film['deskripsi'] ?></td>
                                     <td>
-                                        <button class="btn btn-warning btn-sm btn-edit m-1" data-id="<?= $film['id'] ?>" data-judul="<?= $film['judul'] ?>" data-genre="<?= $film['genre'] ?>" data-durasi="<?= $film['durasi'] ?>" data-tahun-rilis="<?= $film['tahun_rilis'] ?>" data-deskripsi="<?= $film['deskripsi'] ?>">
-                                            Edit
-                                        </button>
-                                        <button class="btn btn-danger btn-sm btn-hapus m-1" data-id="<?= $film['id'] ?>">
-                                            Hapus
-                                        </button>
+                                        <?php if (isset($_SESSION['user'])): ?>
+                                            <button class="btn btn-warning btn-sm btn-edit m-1" data-id="<?= $film['id'] ?>" data-judul="<?= $film['judul'] ?>" data-genre="<?= $film['genre'] ?>" data-durasi="<?= $film['durasi'] ?>" data-tahun-rilis="<?= $film['tahun_rilis'] ?>" data-deskripsi="<?= $film['deskripsi'] ?>">
+                                                Edit
+                                            </button>
+                                            <button class="btn btn-danger btn-sm btn-hapus m-1" data-id="<?= $film['id'] ?>">
+                                                Hapus
+                                            </button>
+                                        <?php endif; ?>
                                         <a href="<?= BASEURL; ?>/film/detail/<?= $film['id'] ?>" class="btn btn-info btn-sm btn-detail m-1">Detail</a>
                                     </td>
                                 </tr>
@@ -177,7 +170,7 @@
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-check-circle"></i>
-                            Yes
+                            Ya
                         </button>
                     </div>
                 </form>

@@ -6,7 +6,7 @@ class About extends Controller
     {
         $data['nama'] = $nama;
         $data['status'] = $status;
-        $data['title'] = 'About';
+        $data['title'] = 'Tentang Kami';
         $this->view('templates/header', $data);
         $this->view('about/index', $data);
         $this->view('templates/footer');

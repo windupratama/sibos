@@ -1,10 +1,18 @@
 <?php
-class user_model {
-    private $nama = 'Si BOS';
+class user_model
+{
+    private $table = 'users';
+    private $db;
 
-        public function getUser(){
-            return $this->nama;
-        }
+    public function __construct()
+    {
+        $this->db = new Database;
     }
-    
-?>
+
+    public function getUserByEmail($email)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE email = :email');
+        $this->db->bind('email', $email);
+        return $this->db->single();
+    }
+}

@@ -1,25 +1,22 @@
 <section class="container mt-5">
-    <div class="my-3">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/film">Film</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= BASEURL; ?>/bioskop">Bioskop</a>
-            </li>
-        </ul>
+    <div class=" row my-3">
+        <div class="col-12 d-flex align-items-center">
+            <a href="<?=BASEURL;?>/film" class="text-decoration-none">
+                <i class="fas fa-arrow-alt-circle-left text-warning me-2"></i>
+            </a>
+            <h5 class="fw-bold text-danger mb-0">Detail Film</h5>
+        </div>
     </div>
     <hr>
-    <h4 class="fw-bold"> User Aktif : <?= $data['nama'] ?></h4>
     <div class="row my-3">
-        <div class="col-4">
-            <img src="<?= BASEURL; ?>/img/film-4.png" class="img-fluid image-detail" alt="image-detail">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2">
+            <img src="<?= BASEURL; ?>/img/film-4.png" class="img-fluid" alt="image-detail">
         </div>
-        <div class="col">
+        <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Judul Film : <?= $data['film']['judul'] ?></h5>
-                    <p class="card-text">Deskripsi : 
+                    <p class="card-text">Deskripsi :
                         <br>
                         <?= $data['film']['deskripsi'] ?>
                     </p>

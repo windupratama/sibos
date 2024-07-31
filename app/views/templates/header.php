@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiBOS | <?= $data['title'];?></title>
+    <title>SiBOS | <?= $data['title']; ?></title>
 
-    <!-- bootstrap CSS -->
-    <link href="<?= BASEURL; ?>/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- Bootstrap CSS -->
+    <link href="<?= BASEURL; ?>/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
     <link href="<?= BASEURL; ?>/style.css" rel="stylesheet">
-    <!-- <link href="<?= BASEURL; ?>/mobile.css" rel="stylesheet"> -->
-    <!-- favicon -->
+    <link href="<?= BASEURL; ?>/mobile.css" rel="stylesheet">
+    <!-- Favicon -->
     <link rel="shortcut icon" href="<?= BASEURL; ?>/img/favicon.ico" type="image/x-icon">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- Script Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -31,13 +35,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active text-white" aria-current="page" href="<?= BASEURL; ?>">Home</a>
-                    <a class="nav-link text-white" href="<?= BASEURL; ?>/about">About</a>
-                    <a class="nav-link text-white" href="<?= BASEURL; ?>/film">Informasi</a>
-                    <!-- <button class="nav-link btn btn-sm btn-outline-warning text-white" href="<?= BASEURL; ?>/login">Login</button> -->
+                    <a class="nav-link active text-white" aria-current="page" href="<?= BASEURL; ?>">Beranda</a>
+                    <a class="nav-link text-white" href="<?= BASEURL; ?>/about">Tentang Kami</a>
+                    <a class="nav-link text-white" href="<?= BASEURL; ?>/information">Informasi</a>
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <a class="nav-link btn btn-sm btn-outline-warning text-white" href="<?= BASEURL; ?>/login/logout">Logout</a>
+                    <?php else: ?>
+                        <a class="nav-link btn btn-sm btn-outline-warning text-white" href="<?= BASEURL; ?>/login">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </nav>
     <div class="container-fluid">
-    <!-- navbar -->
+        <!-- navbar -->

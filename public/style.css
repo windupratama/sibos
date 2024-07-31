@@ -105,6 +105,20 @@ html, body {
     height: auto;
 }
 
+.bg-login {
+    background-image: url('./img/img-hero.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* footer */
 .bg-footer {
     background: linear-gradient(to right, #360c06, #a30404);
