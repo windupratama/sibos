@@ -5,9 +5,7 @@ class Login extends Controller
     public function index()
     {
         $data['title'] = 'Login';
-        $this->view('templates/header', $data);
-        $this->view('login');
-        $this->view('templates/footer');
+        $this->view('login', $data);
     }
 
     public function check() {
@@ -33,4 +31,3 @@ class Login extends Controller
         header('Location: ' . BASEURL . '/login');
     }
 }
-?>

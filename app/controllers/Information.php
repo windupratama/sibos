@@ -8,8 +8,6 @@ class Information extends Controller
         if (isset($_SESSION['user'])) {
             $data['nama'] = $_SESSION['user']['nama'];
         }
-        $this->view('templates/header', $data);
         $this->view('information/index', $data);
-        $this->view('templates/footer');
     }
 }

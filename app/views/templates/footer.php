@@ -1,4 +1,4 @@
-</div>
+</section>
 <footer class="bg-footer text-white py-3 mt-auto">
     <div class="container text-end">
         <p class="mb-0">&copy; 2024 SiBOS. All rights reserved.</p>

@@ -1,5 +1,12 @@
 # Cinema System Information
 
-## Requirments
-- PHP 7.4 atau lebih baru
-- MySQL atau MariaDB
+Implementasi arsitektur Model-View-Controller (MVC) menggunakan PHP Native.    
+
+## Requirements
+- PHP 8.1
+- MySQL
+- VsCode
+- Laragon/XAMPP
+- Chrome/Mozilla Firefox
+
+###

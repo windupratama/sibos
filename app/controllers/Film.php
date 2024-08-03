@@ -6,18 +6,14 @@ class Film extends Controller
     {
         $data['title'] = 'Film Bioskop';
         $data['film'] = $this->model('film_model')->getAllFilm();
-        $this->view('templates/header', $data);
         $this->view('film/index', $data);
-        $this->view('templates/footer');
     }
 
     public function detail($id)
     {
         $data['title'] = 'Detail Film';
         $data['film'] = $this->model('film_model')->getFilmbyId($id);
-        $this->view('templates/header', $data);
         $this->view('film/detail', $data);
-        $this->view('templates/footer');
     }
 
     public function tambah()
@@ -69,9 +65,6 @@ class Film extends Controller
         } else {
             Notification::setAlert('Gagal', 'Data tidak ada', 'danger');
         }
-
-        $this->view('templates/header', $data);
         $this->view('film/index', $data);
-        $this->view('templates/footer');
     }
 }

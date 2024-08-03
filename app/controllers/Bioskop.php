@@ -6,9 +6,7 @@ class Bioskop extends Controller
     {
         $data['title'] = 'Daftar Bioskop';
         $data['bioskop'] = $this->model('bioskop_model')->getAllBioskop();
-        $this->view('templates/header', $data);
         $this->view('bioskop/index', $data);
-        $this->view('templates/footer');
     }
 
     //public function detail($id)
@@ -16,9 +14,7 @@ class Bioskop extends Controller
     //    $data['title'] = 'Detail Bioskop';
     //    $data['nama'] = $this->model('user_model')->getUser();
     //    $data['bioskop'] = $this->model('bioskop_model')->getBioskopbyId($id);
-    //    $this->view('templates/header', $data);
     //    $this->view('bioskop/detail', $data);
-    //    $this->view('templates/footer');
     //}
 
     public function tambah()
@@ -71,8 +67,6 @@ class Bioskop extends Controller
             Notification::setAlert('Gagal', 'Data tidak ada', 'danger');
         }
 
-        $this->view('templates/header', $data);
         $this->view('bioskop/index', $data);
-        $this->view('templates/footer');
     }
 }

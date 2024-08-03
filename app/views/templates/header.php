@@ -47,5 +47,5 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <section id="body">
         <!-- navbar -->

@@ -80,7 +80,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <a href="<?= BASEURL; ?>/film" class="text-decoration-none">
+                                    <a href="<?= BASEURL; ?>/event" class="text-decoration-none">
                                         <h5 class="card-title fw-bold text-danger">Event</h5>
                                     </a>
                                     <p class="card-text">Lihat selengkapnya.</p>
@@ -97,7 +97,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <a href="<?= BASEURL; ?>/bioskop" class="text-decoration-none">
+                                    <a href="<?= BASEURL; ?>/ticket" class="text-decoration-none">
                                         <h5 class="card-title fw-bold text-danger">Pesan Tiket</h5>
                                     </a>
                                     <p class="card-text">Lihat selengkapnya.</p>
