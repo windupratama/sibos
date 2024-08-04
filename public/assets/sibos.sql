@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 31, 2024 at 11:52 AM
+-- Generation Time: Aug 04, 2024 at 01:28 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -42,7 +42,7 @@ INSERT INTO `bioskop` (`id`, `nama`, `alamat`, `kota`) VALUES
 (1, 'Bioskop PS Mall', 'Jl. Angkatan 45 No. 123', 'Palembang'),
 (2, 'Bioskop OPI Mall', 'Jl. Gubernur H. A Bastari No. 298', 'Palembang'),
 (3, 'Bioskop PTC Mall', 'Jl. R.Soekamto No. 456', 'Palembang'),
-(4, 'Bioskop Cinepolis PIM', 'Palembang Icon Mall Lantai 3 No. 55', 'Palembang');
+(4, 'Bioskop Cinepolis PIM', 'Palembang Icon Mall Lantai 3', 'Palembang');
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('admin') DEFAULT 'admin',
+  `role` enum('admin','user') DEFAULT 'admin',
   `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -89,7 +89,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `nama`) VALUES
-(2, 'admin@example.com', 'password', 'admin', 'SiBOS');
+(2, 'admin@example.com', 'password', 'admin', 'Admin'),
+(3, 'user@example.com', 'password', 'user', 'User Satu');
 
 --
 -- Indexes for dumped tables
@@ -133,7 +134,7 @@ ALTER TABLE `film`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

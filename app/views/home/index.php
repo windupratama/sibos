@@ -14,7 +14,7 @@
         <hr>
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 my-3">
             <div class="card border-0">
-                <img src="<?= BASEURL; ?>/img/card-1.png" class="card-img-top shadow-md rounded-3" alt="card-1">
+                <img src="<?= BASEURL; ?>/assets/img/card-1.png" class="card-img-top shadow-md rounded-3" alt="card-1">
                 <div class="card-body">
                     <p class="card-title title-color fw-bold">The Worst Of Evil</p>
                 </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 my-3">
             <div class="card border-0">
-                <img src="<?= BASEURL; ?>/img/card-2.png" class="card-img-top shadow-md rounded-3" alt="card-2">
+                <img src="<?= BASEURL; ?>/assets/img/card-2.png" class="card-img-top shadow-md rounded-3" alt="card-2">
                 <div class="card-body">
                     <p class="card-title title-color fw-bold">Aladin</p>
                 </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 my-3">
             <div class="card border-0">
-                <img src="<?= BASEURL; ?>/img/card-3.png" class="card-img-top shadow-md rounded-3" alt="card-3">
+                <img src="<?= BASEURL; ?>/assets/img/card-3.png" class="card-img-top shadow-md rounded-3" alt="card-3">
                 <div class="card-body">
                     <p class="card-title title-color fw-bold">Blue Bettle</p>
                 </div>
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-3">
                 <div class="card border-0">
-                    <img src="<?= BASEURL; ?>/img/img-coming-soon.png" class="card-img-top shadow-md rounded-3" alt="card-1">
+                    <img src="<?= BASEURL; ?>/assets/img/img-coming-soon.png" class="card-img-top shadow-md rounded-3" alt="card-1">
                 </div>
                 <h3 class="card-title title-color fw-bold my-2">Transformers - Rise of The Beasts</h3>
             </div>
@@ -63,18 +63,20 @@
                             <br>
                             Transformers seri ini menceritakan tentang Optimus Prime yang bertemu dengan Autobots gorila bernama Optimus Primal yang mengingatkan tentang ancaman dari makhluk raksasa luar angkasa.
                         </p>
-                        <p class="card-text fw-bold">Tahun Rilis : <small class="text-muted">2023</small>
+                        <p class="card-text fw-bold">Tahun Rilis : <small class="text-muted">2024</small>
                         </p>
                         <p class="card-text fw-bold">Produksi Film : <small class="text-muted">Paramount Pictures </small>
                         </p>
                         <p class="card-text fw-bold">Sutradara : <small class="text-muted">Steven Caple Jr.</small>
                         </p>
-                        <p class="card-text fw-bold">Tayang perdana di : <small class="text-muted">Cinepolis Palembang Icon</small>
+                        <p class="card-text fw-bold">Tayang perdana di : 
+                            <small class="text-muted">Cinepolis Palembang Icon -</small>
+                            <span class="text-danger"> 30 Oktober 2024 </span>
                         </p>
                     </div>
                     <div class="card-footer">
                         <div class="text-end">
-                            <button type="button" class="btn btn-sm btn-warning"> Tonton Sekarang</button>
+                            <a href="<?= BASEURL; ?>/login" class="btn btn-sm btn-warning"> Lihat Jadwal</a>
                         </div>
                     </div>
                 </div>

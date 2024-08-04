@@ -7,12 +7,12 @@
     <title>SiBOS | <?= $data['title']; ?></title>
 
     <!-- Bootstrap CSS -->
-    <link href="<?= BASEURL; ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= BASEURL; ?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
-    <link href="<?= BASEURL; ?>/style.css" rel="stylesheet">
-    <link href="<?= BASEURL; ?>/mobile.css" rel="stylesheet">
+    <link href="<?= BASEURL; ?>/assets/style.css" rel="stylesheet">
+    <link href="<?= BASEURL; ?>/assets/mobile.css" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= BASEURL; ?>/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= BASEURL; ?>/assets/img/favicon.ico" type="image/x-icon">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand text-white" href="<?= BASEURL; ?>">
-                <img src="<?= BASEURL; ?>/img/logo.png">
+                <img src="<?= BASEURL; ?>/assets/img/logo.png">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

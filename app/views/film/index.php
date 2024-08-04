@@ -9,7 +9,8 @@
                 <h5 class="card-title mb-0">Daftar Film</h5>
                 <form action="<?= BASEURL; ?>/film/cari" method="post">
                     <div class="input-group input-group-sm">
-                        <input type="text" class="form-control form-control-sm bg-light" name="keyword" placeholder="cari film/genre/tahun rilis" autocomplete="off">
+                        <input type="text" class="form-control form-control-sm bg-light" name="keyword"
+                            placeholder="cari film/genre/tahun rilis" autocomplete="off">
                         <span class="input-group-text">
                             <button type="submit" class="btn btn-sm btn-danger" id="cariFilm">Cari</button>
                         </span>
@@ -17,12 +18,13 @@
                 </form>
             </div>
             <div class="card-body">
-                <?php if (isset($_SESSION['user'])): ?>
-                <div class="text-end">
-                    <button type="button" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#tambahData">
-                        Tambah Data
-                    </button>
-                </div>
+                <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')): ?>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal"
+                            data-bs-target="#tambahData">
+                            Tambah Data
+                        </button>
+                    </div>
                 <?php endif; ?>
                 <div class="table-responsive table-sm p-2" style="max-height: 400px;">
                     <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -40,7 +42,7 @@
 
                         <tbody>
                             <?php $no = 1;
-                            foreach ($data['film'] as $film) : ?>
+                            foreach ($data['film'] as $film): ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $film['judul'] ?></td>
@@ -49,15 +51,20 @@
                                     <td><?= $film['tahun_rilis'] ?></td>
                                     <td><?= $film['deskripsi'] ?></td>
                                     <td>
-                                        <?php if (isset($_SESSION['user'])): ?>
-                                            <button class="btn btn-warning btn-sm btn-edit m-1" data-id="<?= $film['id'] ?>" data-judul="<?= $film['judul'] ?>" data-genre="<?= $film['genre'] ?>" data-durasi="<?= $film['durasi'] ?>" data-tahun-rilis="<?= $film['tahun_rilis'] ?>" data-deskripsi="<?= $film['deskripsi'] ?>">
+                                        <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')): ?>
+                                            <button class="btn btn-warning btn-sm btn-edit m-1" data-id="<?= $film['id'] ?>"
+                                                data-judul="<?= $film['judul'] ?>" data-genre="<?= $film['genre'] ?>"
+                                                data-durasi="<?= $film['durasi'] ?>"
+                                                data-tahun-rilis="<?= $film['tahun_rilis'] ?>"
+                                                data-deskripsi="<?= $film['deskripsi'] ?>">
                                                 Edit
                                             </button>
                                             <button class="btn btn-danger btn-sm btn-hapus m-1" data-id="<?= $film['id'] ?>">
                                                 Hapus
                                             </button>
                                         <?php endif; ?>
-                                        <a href="<?= BASEURL; ?>/film/detail/<?= $film['id'] ?>" class="btn btn-info btn-sm btn-detail m-1">Detail</a>
+                                        <a href="<?= BASEURL; ?>/film/detail/<?= $film['id'] ?>"
+                                            class="btn btn-info btn-sm btn-detail m-1">Detail</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -79,7 +86,8 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="judulFilm" class="form-label fw-bold">Judul Film</label>
-                            <input type="text" class="form-control form-control-sm" id="judulFilm" name="judul" placeholder="ketik judul film.." autocomplete="off" required>
+                            <input type="text" class="form-control form-control-sm" id="judulFilm" name="judul"
+                                placeholder="ketik judul film.." autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="genre" class="form-label fw-bold">Genre</label>
@@ -93,15 +101,19 @@
                         </div>
                         <div class="mb-3">
                             <label for="durasi" class="form-label fw-bold">Durasi Film</label>
-                            <input type="number" class="form-control form-control-sm" id="durasi" name="durasi" min="0" max="150" placeholder="input durasi.." autocomplete="off" required>
+                            <input type="number" class="form-control form-control-sm" id="durasi" name="durasi" min="0"
+                                max="150" placeholder="input durasi.." autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="tahun_rilis" class="form-label fw-bold">Tahun Rilis</label>
-                            <input type="number" class="form-control form-control-sm" id="tahun_rilis" name="tahun_rilis" min="2000" max="2099" placeholder="input tahun rilis.." autocomplete="off" required>
+                            <input type="number" class="form-control form-control-sm" id="tahun_rilis"
+                                name="tahun_rilis" min="2000" max="2099" placeholder="input tahun rilis.."
+                                autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label fw-bold">Deskripsi</label>
-                            <input type="text" class="form-control form-control-sm" id="deskripsi" name="deskripsi" placeholder="ketik deskripsi.." autocomplete="off" required>
+                            <input type="text" class="form-control form-control-sm" id="deskripsi" name="deskripsi"
+                                placeholder="ketik deskripsi.." autocomplete="off" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -123,11 +135,13 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="idFilm" class="form-label fw-bold">Id Film</label>
-                            <input type="text" class="form-control form-control-sm id-film" id="idFilm" name="id" readonly>
+                            <input type="text" class="form-control form-control-sm id-film" id="idFilm" name="id"
+                                readonly>
                         </div>
                         <div class="mb-3">
                             <label for="judulFilm" class="form-label fw-bold">Judul Film</label>
-                            <input type="text" class="form-control form-control-sm judul-film" id="judulFilm" name="judul" placeholder="ketik judul film.." autocomplete="off" required>
+                            <input type="text" class="form-control form-control-sm judul-film" id="judulFilm"
+                                name="judul" placeholder="ketik judul film.." autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="genre" class="form-label fw-bold">Genre</label>
@@ -137,15 +151,18 @@
                         </div>
                         <div class="mb-3">
                             <label for="durasi" class="form-label fw-bold">Durasi Film</label>
-                            <input type="number" class="form-control form-control-sm durasi-film" id="durasi" name="durasi" placeholder="input durasi.." autocomplete="off" required>
+                            <input type="number" class="form-control form-control-sm durasi-film" id="durasi"
+                                name="durasi" placeholder="input durasi.." autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="tahun_rilis" class="form-label fw-bold">Tahun Rilis</label>
-                            <input type="number" class="form-control form-control-sm tahun-rilis" id="tahun_rilis" name="tahun_rilis" placeholder="input tahun rilis.." autocomplete="off" required>
+                            <input type="number" class="form-control form-control-sm tahun-rilis" id="tahun_rilis"
+                                name="tahun_rilis" placeholder="input tahun rilis.." autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label fw-bold">Deskripsi</label>
-                            <input type="text" class="form-control form-control-sm deskripsi-film" id="deskripsi" name="deskripsi" placeholder="ketik deskripsi.." autocomplete="off" required>
+                            <input type="text" class="form-control form-control-sm deskripsi-film" id="deskripsi"
+                                name="deskripsi" placeholder="ketik deskripsi.." autocomplete="off" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -179,7 +196,7 @@
     </div>
 </section>
 <script>
-    $('#dataTable').on('click', '.btn-edit', function() {
+    $('#dataTable').on('click', '.btn-edit', function () {
         $('#editData').modal('show');
         let id = $(this).data('id');
         let judul = $(this).data('judul');
@@ -206,7 +223,7 @@
         $('.deskripsi-film').val(deskripsi);
     });
 
-    $('#dataTable').on('click', '.btn-hapus', function() {
+    $('#dataTable').on('click', '.btn-hapus', function () {
         $('#hapusData').modal('show');
         let id = $(this).data('id');
         // console.log(id);
@@ -214,10 +231,10 @@
         $('.hapus-data').attr('action', url);
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         const time = $('.alert-message').text();
         if (time != '') {
-            setTimeout(function() {
+            setTimeout(function () {
                 $('.alert-message').fadeOut('slow');
             }, 3000)
         }

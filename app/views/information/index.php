@@ -8,7 +8,10 @@
             </div>
             <hr>
             <?php if (isset($data['nama'])): ?>
-                <p class="text-danger">Selamat datang <span class="fw-bold"><?= htmlspecialchars($data['nama'], ENT_QUOTES, 'UTF-8'); ?></span></p>
+                <div class="d-flex">
+                    <i class="fas fa-user-circle text-success p-1"></i>
+                    <p class="text-danger">Selamat datang <span class="fw-bold"><?= htmlspecialchars($data['nama'], ENT_QUOTES, 'UTF-8'); ?></span></p>
+                </div>
             <?php endif; ?>
         </div>
     </div>
@@ -18,7 +21,7 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="<?= BASEURL; ?>/img/ic-film.png" class="img-fluid rounded-start p-2" alt="ic-film">
+                            <img src="<?= BASEURL; ?>/assets/img/ic-film.png" class="img-fluid rounded-start p-2" alt="ic-film">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -35,7 +38,7 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="<?= BASEURL; ?>/img/ic-cinema.png" class="img-fluid rounded-start p-2" alt="ic-bioskop">
+                            <img src="<?= BASEURL; ?>/assets/img/ic-cinema.png" class="img-fluid rounded-start p-2" alt="ic-bioskop">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -48,12 +51,12 @@
                     </div>
                 </div>
             </div>
-            <?php if (isset($_SESSION['user'])): ?>
+            <?php if (isset($_SESSION['user']) && ( $_SESSION['user']['role'] == 'admin' || $_SESSION['user']['role'] == 'user' )): ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="<?= BASEURL; ?>/img/ic-schedule.png" class="img-fluid rounded-start p-2" alt="ic-jadwal">
+                                <img src="<?= BASEURL; ?>/assets/img/ic-schedule.png" class="img-fluid rounded-start p-2" alt="ic-jadwal">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -69,14 +72,14 @@
             <?php endif; ?>
         </div>
     </div>
-    <?php if (isset($_SESSION['user'])): ?>
+    <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] == 'admin')): ?>
         <div class="container">
             <div class="row justify-content-start">
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="<?= BASEURL; ?>/img/ic-event.png" class="img-fluid rounded-start p-2" alt="ic-film">
+                                <img src="<?= BASEURL; ?>/assets/img/ic-event.png" class="img-fluid rounded-start p-2" alt="ic-film">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -93,7 +96,7 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="<?= BASEURL; ?>/img/ic-ticket.png" class="img-fluid rounded-start p-2" alt="ic-bioskop">
+                                <img src="<?= BASEURL; ?>/assets/img/ic-ticket.png" class="img-fluid rounded-start p-2" alt="ic-bioskop">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
