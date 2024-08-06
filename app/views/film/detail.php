@@ -10,7 +10,7 @@
     <hr>
     <div class="row my-3">
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2">
-            <img src="<?= BASEURL; ?>/img/film-4.png" class="img-fluid" alt="image-detail">
+            <img src="<?= BASEURL; ?>/assets/img/film-4.png" class="img-fluid" alt="image-detail">
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
             <div class="card mb-3">

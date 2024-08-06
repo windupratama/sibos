@@ -40,6 +40,12 @@ class App {
         //jalankan controller & method, params jika ada
         call_user_func_array([$this->controller, $this->method], $this->params);
 
+         // Get params
+        //$this->params = $url ? array_values($url) : [];
+
+        // Call the method with params
+        //call_user_func_array([$this->controller, $this->method], $this->params);
+
     }
 
     public function parseUrl()
@@ -51,4 +57,11 @@ class App {
             return $url;
         }
     }
+
+    //public function parseUrl() {
+    //    if (isset($_GET['url'])) {
+    //        return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+    //    }
+    //    return [];
+    //}
 }

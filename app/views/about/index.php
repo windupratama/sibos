@@ -8,7 +8,7 @@
                 <p class="">Tunggu jadwal <b><?= $data['nama']; ?></b> disini, karena aplikasi ini <b><?= $data['status']; ?>.</b></p>
             </div>
             <div class="col-lg-3 d-flex mx-1">
-                <img src="<?= BASEURL; ?>/img/img-about.png" alt="About Image" class="img-fluid rounded-3 shadow-lg">
+                <img src="<?= BASEURL; ?>/assets/img/img-about.png" alt="About Image" class="img-fluid rounded-3 shadow-lg">
             </div>
         </div>
     </div>
