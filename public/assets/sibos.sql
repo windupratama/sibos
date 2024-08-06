@@ -20,6 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `sibos`
 --
+-- Create database sibos if not exist
+CREATE DATABASE IF NOT EXISTS sibos;
+
+-- Select database
+USE sibos;
 
 -- --------------------------------------------------------
 
